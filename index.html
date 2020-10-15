@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>事前復興調査</title>
+</head>
+<body>
+    <h1>フォームで地図から住所入力</h1>
+
+    <ul>
+        <li>緯度: <span id="lat"></span></li>
+        <li>経度: <span id="lng"></span></li>
+        <li>住所: <span id="address"></span></li>
+    </ul>
+    <div style="width:calc(100% - 20px); height:450px; margin:10px;" id="map"></div>
+
+    <p>上の地図でクリックした地点の住所が下に入力されます。<br />
+    その後、必要に応じて修正して下さい。</p>
+
+    <form action="./hoge.php" method="post">
+        <p>郵便番号: <input id="postal" type="text" name="postal-code" size="8"></p>
+        <p>都道府県: <input id="addr1" type="text" name="address-level1" size="8"></p>
+        <p>市区町村: <input id="addr2" type="text" name="address-level2" size="24"></p>
+        <p>番地・建物名 (1行目): <input id="addr3" type="text" name="address-line1" size="48"></p>
+        <p>番地・建物名 (2行目): <input id="addr4" type="text" name="address-line2" size="48"></p>
+        <p><input type="submit" value="送信"><input type="reset" value="リセット"></p>
+    </form>
+
+    <script src="//maps.google.com/maps/api/js?key=AIzaSyBmGlUg-_VJxe_x8HCVnJAZoJPFy1tirQ4"></script>
+    <script src="./map.js"></script>
+</body>
+</html>
